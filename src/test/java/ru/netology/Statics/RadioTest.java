@@ -33,6 +33,13 @@ public class RadioTest {
         assertEquals(84, Radio.decreaseVolume());
     }
 
+    @Test
+    public void setNumberStation (){
+        Radio Radio = new Radio();
+        Radio.setNumberStation(5);
+        Radio.setNumberStation(15);
 
+        assertEquals(5,Radio.getNumberStation());
+    }
 
 }

@@ -1,6 +1,7 @@
 package ru.netology.Statics;
 
 public class Radio {
+
     int numberStation;
     int maxNumberStation = 9;
     int volume;
@@ -22,8 +23,19 @@ public class Radio {
     }
 
     public void setNumberStation(int numberStation) {
+
+        if (numberStation <0){
+            return;
+        }
+        if (numberStation >9){
+            return;
+        }
         this.numberStation = numberStation;
     }
+    public int getNumberStation() {
+        return numberStation;
+    }
+
     public int increaseVolume() {
         if (volume > 99) {
             return volume;
