@@ -2,21 +2,23 @@ package ru.netology.Statics;
 
 public class Radio {
 
-    int numberStation;
-    int maxNumberStation = 9;
-    int volume;
-    int maxVolume = 99;
+    public static int numberStation;
+    public static int maxNumberStation = 9;
+    public static int minNumberStation = 0;
+    public static int volume;
+    public static int maxVolume = 99;
+    public static int minVolume = 0;
 
 
-    public int nextNumberStation() {
-        if (numberStation > maxNumberStation-1) {
+    public static int nextNumberStation() {
+        if (numberStation > maxNumberStation - 1) {
             return 0;
         }
         return numberStation++;
     }
 
-    public int prevNumberStation() {
-        if (numberStation<1) {
+    public static int prevNumberStation() {
+        if (numberStation < minNumberStation) {
             return maxNumberStation;
         }
         return numberStation--;
@@ -24,27 +26,28 @@ public class Radio {
 
     public void setNumberStation(int numberStation) {
 
-        if (numberStation <0){
+        if (numberStation < minNumberStation) {
             return;
         }
-        if (numberStation >9){
+        if (numberStation > maxNumberStation) {
             return;
         }
         this.numberStation = numberStation;
     }
-    public int getNumberStation() {
+
+    public static int getNumberStation() {
         return numberStation;
     }
 
-    public int increaseVolume() {
-        if (volume > 99) {
+    public static int increaseVolume() {
+        if (volume > maxVolume) {
             return volume;
         }
         return ++volume;
     }
 
-    public int decreaseVolume() {
-        if (volume < 1) {
+    public static int decreaseVolume() {
+        if (volume < minVolume) {
             return volume;
         }
         return --volume;

@@ -7,39 +7,40 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RadioTest {
     @Test
     public void nextNumberStation() {
-        Radio Radio = new Radio();
-        Radio.maxNumberStation = 9;
+        Radio radio = new Radio();
+        radio.maxNumberStation = 9;
         assertEquals(0, Radio.nextNumberStation());
     }
 
     @Test
     public void prevNumberStation() {
-        Radio Radio = new Radio();
-        Radio.numberStation = 0;
+        Radio radio = new Radio();
+        radio.numberStation = -1;
         assertEquals(9, Radio.prevNumberStation());
+        assertEquals(-1, Radio.getNumberStation());
     }
 
     @Test
     public void increaseVolume() {
-        Radio Radio = new Radio();
-        Radio.volume = 6;
+        Radio radio = new Radio();
+        radio.volume = 6;
         assertEquals(7, Radio.increaseVolume());
     }
 
     @Test
     public void decreaseVolume() {
-        Radio Radio = new Radio();
-        Radio.volume = 85;
+        Radio radio = new Radio();
+        radio.volume = 85;
         assertEquals(84, Radio.decreaseVolume());
     }
 
     @Test
-    public void setNumberStation (){
-        Radio Radio = new Radio();
-        Radio.setNumberStation(5);
-        Radio.setNumberStation(15);
+    public void setNumberStation() {
+        Radio radio = new Radio();
+        radio.setNumberStation(5);
+        radio.setNumberStation(15);
 
-        assertEquals(5,Radio.getNumberStation());
+        assertEquals(5, Radio.getNumberStation());
     }
 
 }
