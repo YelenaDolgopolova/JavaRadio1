@@ -37,15 +37,15 @@ public class RadioTest {
     public void nextNumberStation() {
         Radio radio = new Radio();
         radio.setNumberStation(11);
-        assertEquals(0, radio.getNextNumberStation());
+        assertEquals(10, radio.getNextNumberStation());
     }
 
     @Test
     public void prevNumberStation() {
         Radio radio = new Radio();
-        radio.setNumberStation(0);
+        radio.setNumberStation(11);
         assertEquals(10, radio.getPrevNumberStation());
-        assertEquals(0, radio.getNumberStation());
+        assertEquals(9, radio.getNumberStation());
     }
 
     @Test
@@ -70,4 +70,28 @@ public class RadioTest {
         radio.setNumberStation(15);
         assertEquals(10, radio.getMaxNumberStation());
     }
+
+    @Test
+    public void NumberStation() {
+        Radio radio = new Radio();
+        radio.setNumberStation(2);
+        radio.setNumberStation(12);
+        assertEquals(2, radio.getNumberStation());
+    }
+    @Test
+    public void RadioShouldDisplayNumberStation() {
+        Radio radio = new Radio(5);
+        radio.setNumberStation(-5);
+        assertEquals(5, radio.getNumberStation());
+    }
+    @Test
+    public void ShouldDisplayDefaultRadio() {
+        Radio radio = new Radio();
+        assertEquals(10, radio.getNumberStation());
+        assertEquals(10, radio.getMaxNumberStation());
+        assertEquals(0, radio.getMinNumberStation());
+        assertEquals(100, radio.getMaxVolume());
+        assertEquals(0, radio.getMinVolume());
+    }
+
 }

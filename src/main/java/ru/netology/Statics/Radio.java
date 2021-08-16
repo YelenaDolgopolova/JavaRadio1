@@ -2,24 +2,31 @@ package ru.netology.Statics;
 
 public class Radio {
 
-    private int numberStation;
+    private int numberStation = 10;
     private int maxNumberStation = 10;
-    private int minNumberStation = 0;
+    private int minNumberStation =0;
     private int volume;
     private int maxVolume = 100;
     private int minVolume = 0;
 
+    public Radio() {
+    }
+
+    public Radio(int numberStation) {
+
+        this.numberStation = numberStation;
+    }
 
     public int getNextNumberStation() {
         if (numberStation > maxNumberStation - 1) {
-            return minNumberStation;
+            return maxNumberStation;
         }
         return numberStation++;
     }
 
     public int getPrevNumberStation() {
         if (numberStation < minNumberStation + 1) {
-            return maxNumberStation;
+            return minNumberStation;
         }
         return numberStation--;
     }
