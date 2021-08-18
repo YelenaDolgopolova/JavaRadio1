@@ -10,24 +10,24 @@ public class RadioTest {
     public void increaseVolume() {
         Radio radio = new Radio();
         radio.setVolume(6);
-        assertEquals(7, radio.IncreaseVolume());
+        assertEquals(7, radio.increaseVolume());
     }
 
     @Test
     public void decreaseVolume() {
         Radio radio = new Radio();
         radio.setVolume(85);
-        assertEquals(84, radio.DecreaseVolume());
+        assertEquals(84, radio.decreaseVolume());
     }
     @Test
-    public void MaxVolume() {
+    public void maxVolume() {
         Radio radio = new Radio();
         radio.setVolume(122);
         assertEquals(100, radio.getMaxVolume());
     }
 
     @Test
-    public void MinVolume() {
+    public void minVolume() {
         Radio radio = new Radio();
         radio.setVolume(-3);
         assertEquals(0, radio.getMinVolume());
@@ -37,14 +37,14 @@ public class RadioTest {
     public void nextNumberStation() {
         Radio radio = new Radio();
         radio.setNumberStation(11);
-        assertEquals(0, radio.getNextNumberStation());
+        assertEquals(0, radio.nextNumberStation());
     }
 
     @Test
-    public void prevNumberStation() {
+    public void PrevNumberStation() {
         Radio radio = new Radio();
         radio.setNumberStation(0);
-        assertEquals(10, radio.getPrevNumberStation());
+        assertEquals(10, radio.prevNumberStation());
         assertEquals(0, radio.getNumberStation());
     }
 

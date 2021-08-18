@@ -10,14 +10,14 @@ public class Radio {
     private int minVolume = 0;
 
 
-    public int getNextNumberStation() {
+    public int nextNumberStation() {
         if (numberStation > maxNumberStation - 1) {
             return minNumberStation;
         }
         return numberStation++;
     }
 
-    public int getPrevNumberStation() {
+    public int prevNumberStation() {
         if (numberStation < minNumberStation + 1) {
             return maxNumberStation;
         }
@@ -39,14 +39,14 @@ public class Radio {
         return numberStation;
     }
 
-    public int IncreaseVolume() {
+    public int increaseVolume() {
         if (volume > maxVolume) {
             return volume;
         }
         return ++volume;
     }
 
-    public int DecreaseVolume() {
+    public int decreaseVolume() {
         if (volume < minVolume) {
             return volume;
         }
