@@ -38,6 +38,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setNumberStation(11);
         assertEquals(0, radio.nextNumberStation());
+        assertEquals(1, radio.getNumberStation());
     }
 
     @Test
@@ -56,7 +57,7 @@ public class RadioTest {
         assertEquals(5, radio.getNumberStation());
     }
     @Test
-    public void setMinNumberStationM() {
+    public void setMinNumberStation() {
         Radio radio = new Radio();
         radio.setNumberStation(-5);
         radio.setNumberStation(15);
