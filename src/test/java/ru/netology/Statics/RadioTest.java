@@ -38,6 +38,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setNumberStation(11);
         assertEquals(10, radio.getNextNumberStation());
+        assertEquals(10, radio.getNumberStation());
     }
 
     @Test
@@ -69,6 +70,7 @@ public class RadioTest {
         radio.setNumberStation(20);
         radio.setNumberStation(15);
         assertEquals(10, radio.getMaxNumberStation());
+        assertEquals(10, radio.getNumberStation());
     }
 
     @Test
