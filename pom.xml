@@ -31,7 +31,6 @@
                 <version>2.22.2</version>
                 <configuration>
                     <failIfNoTests>true</failIfNoTests>
-                    <forkCount>0</forkCount>
                 </configuration>
             </plugin>
             <plugin>
@@ -67,7 +66,7 @@
                                 <limit>
                                     <counter>INSTRUCTION</counter>
                                     <value>COVEREDRATIO</value>
-                                    <minimum>100%</minimum>
+                                    <minimum>70%</minimum>
                                 </limit>
                             </limits>
                         </rule>

@@ -14,14 +14,14 @@ public class Radio {
         if (numberStation > maxNumberStation - 1) {
             return minNumberStation;
         }
-        return numberStation++;
+        return ++numberStation;
     }
 
     public int prevNumberStation() {
         if (numberStation < minNumberStation + 1) {
             return maxNumberStation;
         }
-        return numberStation--;
+        return --numberStation;
     }
 
     public void setNumberStation(int numberStation) {
@@ -32,6 +32,7 @@ public class Radio {
         if (numberStation > maxNumberStation) {
             return;
         }
+
         this.numberStation = numberStation;
     }
 
@@ -40,14 +41,14 @@ public class Radio {
     }
 
     public int increaseVolume() {
-        if (volume > maxVolume) {
+        if (volume >= maxVolume) {
             return volume;
         }
         return ++volume;
     }
 
     public int decreaseVolume() {
-        if (volume < minVolume) {
+        if (minVolume >= volume ) {
             return volume;
         }
         return --volume;
@@ -74,6 +75,12 @@ public class Radio {
     }
 
     public void setVolume(int volume) {
+        if (volume < minVolume) {
+            return;
+        }
+        if (volume > getMaxVolume()) {
+            return;
+        }
         this.volume = volume;
     }
 
